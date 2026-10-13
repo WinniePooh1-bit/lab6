@@ -1,0 +1,4 @@
+pict windows binary release
+Pairwise Independent Combinatorial Testing
+
+Usage: pict model [options]
