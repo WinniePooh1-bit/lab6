@@ -1,4 +1,4 @@
-pict windows binary release
+pict commit d87f647 2026-10-21
 Pairwise Independent Combinatorial Testing
 
 Usage: pict model [options]
