@@ -1,6 +1,6 @@
-# Transfer model — PICT negative testing.
-# A tilde marks one invalid/error choice. PICT pairs each negative value
-# only with positive values in the other categories, preventing error masking.
+# PICT negative testing: each ~ value is an invalid/error choice.
+# PICT ensures no test row has more than one negative value.
+# Unlike transfer.model, this model needs no IF constraints to isolate errors.
 From:     Valid, ~Frozen, ~Missing
 To:       Valid, ~Missing, ~SameAsFrom
 Amount:   Normal, ~Zero, ~OverBalance, ~OverLimit
