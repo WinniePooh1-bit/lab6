@@ -25,9 +25,9 @@ PICT_COMMIT="$(git -C "$PICT_SOURCE/pict" log -1 --format='pict commit %h %ad' -
 
 echo "Building PICT from source..."
 cmake -S "$PICT_SOURCE/pict" -B "$PICT_SOURCE/pict/build" -DCMAKE_BUILD_TYPE=Release \
-  > results/pict-cmake-configure.txt 2>&1
+  > "$PICT_SOURCE/cmake-configure.log" 2>&1
 cmake --build "$PICT_SOURCE/pict/build" --config Release -j2 \
-  > results/pict-cmake-build.txt 2>&1
+  > "$PICT_SOURCE/cmake-build.log" 2>&1
 
 PICT_BIN="$PICT_SOURCE/pict/build/cli/pict"
 if [[ ! -x "$PICT_BIN" ]]; then
@@ -36,13 +36,13 @@ if [[ ! -x "$PICT_BIN" ]]; then
   exit 1
 fi
 
-"$PICT_BIN" > results/pict-usage-full.txt 2>&1 || true
+"$PICT_BIN" > "$PICT_SOURCE/pict-usage-full.txt" 2>&1 || true
 {
   echo "$PICT_COMMIT"
   echo "Build: cmake -S pict -B pict/build -DCMAKE_BUILD_TYPE=Release"
   echo "Build: cmake --build pict/build --config Release -j2"
   echo "PICT usage (first lines):"
-  sed -n '1,4p' results/pict-usage-full.txt
+  sed -n '1,4p' "$PICT_SOURCE/pict-usage-full.txt"
 } > results/pict-build.txt
 
 # Deterministic PICT calls: intentionally no /r random seed option.
