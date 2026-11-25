@@ -1,3 +1,5 @@
+# Transfer model — unconstrained baseline (no IF constraints, no negative tags).
+# This intentionally allows multi-error rows to demonstrate error masking.
 From:     Valid, Frozen, Missing
 To:       Valid, Missing, SameAsFrom
 Amount:   Zero, Normal, OverBalance, OverLimit
