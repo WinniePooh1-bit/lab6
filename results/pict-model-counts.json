@@ -1,0 +1,10 @@
+{
+  "browser_2way": 10,
+  "browser_3way": 20,
+  "transfer_unconstrained": 13,
+  "transfer_constrained": 8,
+  "transfer_category_partition_allowed": 9,
+  "transfer_negative": 16,
+  "transfer_negative_rows_with_one_error": 14,
+  "transfer_negative_error_choices": 7
+}

@@ -1,4 +1,8 @@
-pict commit d87f647 2026-10-21
+pict commit ab76c25 2026-09-08
+Build: cmake -S pict -B pict/build -DCMAKE_BUILD_TYPE=Release
+Build: cmake --build pict/build --config Release -j2
+PICT usage (first lines):
 Pairwise Independent Combinatorial Testing
 
 Usage: pict model [options]
+

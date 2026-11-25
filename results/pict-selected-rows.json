@@ -1,0 +1,20 @@
+{
+  "happy": {
+    "From": "Valid",
+    "To": "Valid",
+    "Amount": "Normal",
+    "Currency": "Same"
+  },
+  "frozen": {
+    "From": "~Frozen",
+    "To": "Valid",
+    "Amount": "Normal",
+    "Currency": "Same"
+  },
+  "zero": {
+    "From": "Valid",
+    "To": "Valid",
+    "Amount": "~Zero",
+    "Currency": "Different"
+  }
+}

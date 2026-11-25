@@ -1,0 +1,42 @@
+[  2%] Building CXX object api/CMakeFiles/pict_api.dir/combination.cpp.o
+[  5%] Building CXX object api/CMakeFiles/pict_api.dir/deriver.cpp.o
+[  7%] Building CXX object api/CMakeFiles/pict_api.dir/exclusion.cpp.o
+[ 13%] Building CXX object api/CMakeFiles/pict_api.dir/parameter.cpp.o
+[ 15%] Building CXX object api/CMakeFiles/pict_api.dir/pictapi.cpp.o
+[ 10%] Building CXX object api/CMakeFiles/pict_api.dir/model.cpp.o
+[ 18%] Building CXX object api/CMakeFiles/pict_api.dir/task.cpp.o
+[ 21%] Building CXX object api/CMakeFiles/pict_api.dir/worklist.cpp.o
+[ 23%] Linking CXX static library libpict.a
+[ 23%] Built target pict_api
+[ 28%] Building CXX object cli/CMakeFiles/pict_cli.dir/ccommon.cpp.o
+[ 31%] Building CXX object cli/CMakeFiles/pict_cli.dir/cmdline.cpp.o
+[ 34%] Building CXX object cli/CMakeFiles/pict_cli.dir/common.cpp.o
+[ 28%] Building CXX object benchmark/CMakeFiles/pict_benchmark.dir/pict_benchmark.cpp.o
+[ 39%] Linking CXX executable pict-benchmark
+[ 39%] Built target pict_benchmark
+[ 42%] Building CXX object clidll/CMakeFiles/pict_dll.dir/dllmain.cpp.o
+[ 44%] Building CXX object clidll/CMakeFiles/pict_dll.dir/__/cli/ccommon.cpp.o
+[ 36%] Building CXX object cli/CMakeFiles/pict_cli.dir/cparser.cpp.o
+[ 47%] Building CXX object clidll/CMakeFiles/pict_dll.dir/__/cli/cmdline.cpp.o
+[ 52%] Building CXX object clidll/CMakeFiles/pict_dll.dir/__/cli/common.cpp.o
+[ 50%] Building CXX object cli/CMakeFiles/pict_cli.dir/ctokenizer.cpp.o
+[ 55%] Building CXX object clidll/CMakeFiles/pict_dll.dir/__/cli/cparser.cpp.o
+[ 57%] Building CXX object cli/CMakeFiles/pict_cli.dir/gcd.cpp.o
+[ 60%] Building CXX object clidll/CMakeFiles/pict_dll.dir/__/cli/ctokenizer.cpp.o
+[ 65%] Building CXX object clidll/CMakeFiles/pict_dll.dir/__/cli/gcd.cpp.o
+[ 63%] Building CXX object cli/CMakeFiles/pict_cli.dir/gcdexcl.cpp.o
+[ 68%] Building CXX object clidll/CMakeFiles/pict_dll.dir/__/cli/gcdexcl.cpp.o
+[ 71%] Building CXX object cli/CMakeFiles/pict_cli.dir/gcdmodel.cpp.o
+[ 73%] Building CXX object clidll/CMakeFiles/pict_dll.dir/__/cli/gcdmodel.cpp.o
+[ 76%] Building CXX object cli/CMakeFiles/pict_cli.dir/model.cpp.o
+[ 78%] Building CXX object clidll/CMakeFiles/pict_dll.dir/__/cli/model.cpp.o
+[ 81%] Building CXX object cli/CMakeFiles/pict_cli.dir/mparser.cpp.o
+[ 84%] Building CXX object clidll/CMakeFiles/pict_dll.dir/__/cli/mparser.cpp.o
+[ 86%] Building CXX object cli/CMakeFiles/pict_cli.dir/pict.cpp.o
+[ 92%] Building CXX object cli/CMakeFiles/pict_cli.dir/strings.cpp.o
+[ 94%] Linking CXX executable pict
+[ 94%] Built target pict_cli
+[ 97%] Building CXX object clidll/CMakeFiles/pict_dll.dir/__/cli/strings.cpp.o
+[ 89%] Building CXX object clidll/CMakeFiles/pict_dll.dir/__/cli/pict.cpp.o
+[100%] Linking CXX shared library libpict.so
+[100%] Built target pict_dll

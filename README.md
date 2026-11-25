@@ -104,7 +104,9 @@ browser.model нь Content, Cookies (тус бүр 3 утга), Popups, Addons, 
 
 <!-- PICT-ANALYSIS-START -->
 
-PICT-ийн бодит гаралтын мөрийн тоо CI build-ийн дараа энд нэмэгдэнэ.
+- Browser-ийн бүрэн оролтын олонлог: **144**; 3-way PICT мөр: **20**.
+- 2-way browser мөр: **10**. Лекцийн гараар хийсэн 9 мөртэй харьцуулахад олон мөр гарсан. PICT greedy алгоритм нь тухайн алхамд хамгийн олон шинэ хосыг хамруулах сонголт хийдэг ч глобал хамгийн цөөн мөрийн оптимумыг баталгаажуулдаггүй.
+- Category-Partition-ийн зөвшөөрөгдсөн олонлог 72-оос 9 болсон (**72 → 9**). PICT constrained model 8 мөрөөр эдгээр хувилбарын бүх боломжит pairwise хосыг бүрхсэн; бүх tuple-ийг тус тусад нь хэвлэх шаардлагагүй.\n- transfer-neg output дотор 14 мөр дор хаяж нэг сөрөг утгатай бөгөөд долоон сөрөг сонголт бүгд орсон.
 
 <!-- PICT-ANALYSIS-END -->
 
@@ -120,7 +122,12 @@ PICT greedy алгоритм нь өмнө хамрагдаагүй хосууд
 
 <!-- PICT-COUNTS-START -->
 
-PICT-ийн бодит гаралтын мөрийн тоонууд CI ажиллуулсны дараа автоматаар бөглөгдөнө.
+| PICT модель / гаралт | Мөрийн тоо | Тайлбар |
+|---|---:|---|
+| browser 2-way | 10 | Pairwise бүх хосын утгыг хамруулсан |
+| browser 3-way | 20 | 144 боломжит гурвалын хамралт |
+| transfer-nc (хязгаарлалтгүй) | 13 | 2-way; олон алдаатай хослол үүсч болно |
+| transfer (A2 хязгаарлалттай) | 8 | 9 зөвшөөрөгдсөн CP хувилбарын pairwise бүрхүүл |\n| transfer-neg (~ сөрөг утгатай) | 16 | Нэг мөрөнд хамгийн ихдээ нэг сөрөг утга |
 
 <!-- PICT-COUNTS-END -->
 
@@ -132,7 +139,11 @@ PICT-ийн бодит гаралтын мөрийн тоонууд CI ажил�
 
 <!-- PICT-CASES-START -->
 
-PICT-ээс сонгосон мөрүүд CI ажиллуулсны дараа setup, POST body, oracle-той хүснэгтээр автоматаар орно.
+| PICT-ээс сонгосон тест | Үүсгэсэн мөр | Setup (данс, үлдэгдэл, лимит) | POST /transfer body | Oracle |
+|---|---|---|---|---|
+| Happy path | `From=Valid, To=Valid, Amount=Normal, Currency=Same` | ACC001: active, balance=500,000 MNT, daily remaining=500,000 MNT, currency=MNT; ACC002: active, currency=MNT | `{"from":"ACC001","to":"ACC002","amount":50000,"currency":"MNT"}` | HTTP 201, result=OK |
+| Нэг алдаа — царцаасан from | `From=~Frozen, To=Valid, Amount=Normal, Currency=Same` | ACC_FROZEN: frozen=true, currency=MNT; ACC002: active, currency=MNT | `{"from":"ACC_FROZEN","to":"ACC002","amount":50000,"currency":"MNT"}` | HTTP 200, result=ERROR_FROZEN |
+| Нэг алдаа — amount=0 | `From=Valid, To=Valid, Amount=~Zero, Currency=Different` | ACC001: active, balance=500,000 MNT, daily remaining=500,000 MNT, currency=MNT; ACC002: active, currency=MNT; FX rate 1 USD = 3,500 MNT | `{"from":"ACC001","to":"ACC002","amount":0,"currency":"USD"}` | HTTP 200, result=ERROR_BAD_AMOUNT |
 
 <!-- PICT-CASES-END -->
 
