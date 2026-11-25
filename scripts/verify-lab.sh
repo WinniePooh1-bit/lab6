@@ -16,8 +16,11 @@ PICT_SOURCE="$(mktemp -d)"
 cleanup() { rm -rf "$PICT_SOURCE"; }
 trap cleanup EXIT
 
-echo "Cloning Microsoft PICT source outside the lab repository..."
-git clone --depth 1 https://github.com/microsoft/pict.git "$PICT_SOURCE/pict"
+echo "Fetching the pinned Microsoft PICT source commit outside the lab repository..."
+git init "$PICT_SOURCE/pict"
+git -C "$PICT_SOURCE/pict" remote add origin https://github.com/microsoft/pict.git
+git -C "$PICT_SOURCE/pict" fetch --depth 1 origin ab76c2548f551fcb46314e58653a1bd1172f3a72
+git -C "$PICT_SOURCE/pict" checkout --detach FETCH_HEAD
 PICT_COMMIT="$(git -C "$PICT_SOURCE/pict" log -1 --format='pict commit %h %ad' --date=short)"
 
 echo "Building PICT from source..."
