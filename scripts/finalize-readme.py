@@ -23,8 +23,10 @@ selected = json.loads(required("pict-selected-rows.json"))
 build_log = required("pict-build.txt")
 if "pict commit " not in build_log or "Usage:" not in build_log:
     raise SystemExit("pict-build.txt must include the actual PICT source commit and CLI usage.")
-if counts["transfer_constrained"] != 9:
-    raise SystemExit(f"Expected 9 transfer Category-Partition rows, got {counts['transfer_constrained']}")
+if counts["transfer_category_partition_allowed"] != 9:
+    raise SystemExit(f"Expected 9 allowed Category-Partition combinations, got {counts['transfer_category_partition_allowed']}")
+if counts["transfer_constrained"] != 8:
+    raise SystemExit(f"Expected an 8-row constrained pairwise array, got {counts['transfer_constrained']}")
 if counts["transfer_negative_error_choices"] != 7:
     raise SystemExit("Expected all seven negative/error choices in transfer-neg output.")
 
