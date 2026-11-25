@@ -109,7 +109,7 @@ summary_table = (
     f"| browser 2-way | {counts['browser_2way']} | Pairwise бүх хосын утгыг хамруулсан |\n"
     f"| browser 3-way | {counts['browser_3way']} | 144 боломжит гурвалын хамралт |\n"
     f"| transfer-nc (хязгаарлалтгүй) | {counts['transfer_unconstrained']} | 2-way; олон алдаатай хослол үүсч болно |\n"
-    f"| transfer (A2 хязгаарлалттай) | {counts['transfer_constrained']} | Category-Partition-ийн зөвшөөрөгдсөн 9 тохиолдол |\n"
+    f"| transfer (A2 хязгаарлалттай) | {counts['transfer_constrained']} | 9 зөвшөөрөгдсөн CP хувилбарын pairwise бүрхүүл |\\n"
     f"| transfer-neg (~ сөрөг утгатай) | {counts['transfer_negative']} | Нэг мөрөнд хамгийн ихдээ нэг сөрөг утга |"
 )
 readme = replace_section(readme, "<!-- PICT-COUNTS-START -->", "<!-- PICT-COUNTS-END -->", summary_table)
@@ -128,7 +128,7 @@ explanation = (
     f"- 2-way browser мөр: **{counts['browser_2way']}**. Лекцийн гараар хийсэн 9 мөртэй харьцуулахад "
     + ("олон" if counts["browser_2way"] > 9 else "их биш")
     + " мөр гарсан. PICT greedy алгоритм нь тухайн алхамд хамгийн олон шинэ хосыг хамруулах сонголт хийдэг ч глобал хамгийн цөөн мөрийн оптимумыг баталгаажуулдаггүй.\n"
-    f"- Transfer-ийн 72 боломжит хослолоос A2 хязгаарлалттай 9 зөвшөөрөгдсөн Category-Partition тохиолдол гарсан (**72 → 9**).\n"
+    f"- Category-Partition-ийн зөвшөөрөгдсөн олонлог 72-оос 9 болсон (**72 → 9**). PICT constrained model {counts['transfer_constrained']} мөрөөр эдгээр хувилбарын бүх боломжит pairwise хосыг бүрхсэн; бүх tuple-ийг тус тусад нь хэвлэх шаардлагагүй.\\n"
     f"- transfer-neg output дотор {counts['transfer_negative_rows_with_one_error']} мөр дор хаяж нэг сөрөг утгатай бөгөөд долоон сөрөг сонголт бүгд орсон."
 )
 readme = replace_section(readme, "<!-- PICT-ANALYSIS-START -->", "<!-- PICT-ANALYSIS-END -->", explanation)
