@@ -1,9 +1,7 @@
+# Transfer model — PICT negative testing.
+# A tilde marks one invalid/error choice. PICT pairs each negative value
+# only with positive values in the other categories, preventing error masking.
 From:     Valid, ~Frozen, ~Missing
 To:       Valid, ~Missing, ~SameAsFrom
 Amount:   Normal, ~Zero, ~OverBalance, ~OverLimit
 Currency: Same, Different
-
-IF [From] = "Missing" THEN [Amount] = "Normal";
-IF [To] = "Missing" THEN [Amount] = "Normal";
-IF [From] = "Frozen" THEN [Amount] = "Normal";
-IF [From] = "Missing" THEN [To] = "Valid";
