@@ -128,7 +128,7 @@ explanation = (
     f"- 2-way browser мөр: **{counts['browser_2way']}**. Лекцийн гараар хийсэн 9 мөртэй харьцуулахад "
     + ("олон" if counts["browser_2way"] > 9 else "их биш")
     + " мөр гарсан. PICT greedy алгоритм нь тухайн алхамд хамгийн олон шинэ хосыг хамруулах сонголт хийдэг ч глобал хамгийн цөөн мөрийн оптимумыг баталгаажуулдаггүй.\n"
-    f"- Category-Partition-ийн зөвшөөрөгдсөн олонлог 72-оос 9 болсон (**72 → 9**). PICT constrained model {counts['transfer_constrained']} мөрөөр эдгээр хувилбарын бүх боломжит pairwise хосыг бүрхсэн; бүх tuple-ийг тус тусад нь хэвлэх шаардлагагүй.\\n"
+    f"- Category-Partition-ийн зөвшөөрөгдсөн олонлог 72-оос 9 болсон (**72 → 9**). PICT constrained model {counts['transfer_constrained']} мөрөөр эдгээр хувилбарын бүх боломжит pairwise хосыг бүрхсэн; бүх tuple-ийг тус тусад нь хэвлэх шаардлагагүй.\n"
     f"- transfer-neg output дотор {counts['transfer_negative_rows_with_one_error']} мөр дор хаяж нэг сөрөг утгатай бөгөөд долоон сөрөг сонголт бүгд орсон."
 )
 readme = replace_section(readme, "<!-- PICT-ANALYSIS-START -->", "<!-- PICT-ANALYSIS-END -->", explanation)
