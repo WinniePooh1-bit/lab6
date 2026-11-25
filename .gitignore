@@ -1,6 +1,6 @@
 .DS_Store
 .idea/
 *.docx
-pict.exe
-pict
+pict/
 build/
+pict.exe
