@@ -109,7 +109,7 @@ summary_table = (
     f"| browser 2-way | {counts['browser_2way']} | Pairwise бүх хосын утгыг хамруулсан |\n"
     f"| browser 3-way | {counts['browser_3way']} | 144 боломжит гурвалын хамралт |\n"
     f"| transfer-nc (хязгаарлалтгүй) | {counts['transfer_unconstrained']} | 2-way; олон алдаатай хослол үүсч болно |\n"
-    f"| transfer (A2 хязгаарлалттай) | {counts['transfer_constrained']} | 9 зөвшөөрөгдсөн CP хувилбарын pairwise бүрхүүл |\\n"
+    f"| transfer (A2 хязгаарлалттай) | {counts['transfer_constrained']} | 9 зөвшөөрөгдсөн CP хувилбарын pairwise бүрхүүл |\n"
     f"| transfer-neg (~ сөрөг утгатай) | {counts['transfer_negative']} | Нэг мөрөнд хамгийн ихдээ нэг сөрөг утга |"
 )
 readme = replace_section(readme, "<!-- PICT-COUNTS-START -->", "<!-- PICT-COUNTS-END -->", summary_table)
