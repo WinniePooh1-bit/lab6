@@ -1,9 +1,19 @@
+# Transfer model — category-partition ERROR and IF/property restrictions
+# The three error dimensions are isolated so that one test row has at most
+# one business error. Currency remains a normal pairwise factor.
 From:     Valid, Frozen, Missing
 To:       Valid, Missing, SameAsFrom
 Amount:   Zero, Normal, OverBalance, OverLimit
 Currency: Same, Different
 
-IF [From] = "Missing" THEN [Amount] = "Normal";
-IF [To] = "Missing" THEN [Amount] = "Normal";
-IF [From] = "Frozen" THEN [Amount] = "Normal";
-IF [From] = "Missing" THEN [To] = "Valid";
+# Source-account errors are tested with a valid recipient and normal amount.
+IF [From] = "Frozen" OR [From] = "Missing"
+THEN [To] = "Valid" AND [Amount] = "Normal";
+
+# Recipient errors are tested with a valid source and normal amount.
+IF [To] = "Missing" OR [To] = "SameAsFrom"
+THEN [From] = "Valid" AND [Amount] = "Normal";
+
+# Amount errors are tested only when both accounts are otherwise valid.
+IF [Amount] = "Zero" OR [Amount] = "OverBalance" OR [Amount] = "OverLimit"
+THEN [From] = "Valid" AND [To] = "Valid";
